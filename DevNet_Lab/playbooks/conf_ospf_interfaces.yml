@@ -1,0 +1,136 @@
+---
+
+
+- hosts: R2
+
+  tasks:
+   - name: Begin OSPF Interface configurations for R2
+     cisco.ios.ios_ospf_interfaces:
+      config:
+       - name: GigabitEthernet0/2
+         address_family:
+          - afi: ipv4
+            process:
+              id: 1
+              area_id: 0
+            adjacency: true
+            #bfd: true
+            #cost:
+             # interface_cost: 5
+            dead_interval:
+              time: 5
+            #demand_circuit:
+             # ignore: true
+            network:
+              broadcast: true
+            #priority: 25
+            resync_timeout: 10
+            #shutdown: true
+            #ttl_security:
+             # hops: 50
+       - name: Loopback0
+         address_family:
+          - afi: ipv4
+            process:
+              id: 1
+              area_id: 0
+            adjacency: true
+            #bfd: true
+            #cost:
+             # interface_cost: 5
+            dead_interval:
+              time: 5
+            #demand_circuit:
+             # ignore: true
+            network:
+              broadcast: true
+            #priority: 25
+            resync_timeout: 10
+            #shutdown: true
+            #ttl_security:
+             # hops: 50
+      state: merged
+
+
+- hosts: R3
+
+  tasks:
+   - name: Begin OSPF Interface configurations for R3
+     cisco.ios.ios_ospf_interfaces:
+      config:
+       - name: GigabitEthernet0/1
+         address_family:
+          - afi: ipv4
+            process:
+              id: 1
+              area_id: 0
+            adjacency: true
+            #bfd: true
+            #cost:
+             # interface_cost: 5
+            dead_interval:
+              time: 5
+            #demand_circuit:
+             # ignore: true
+            network:
+              broadcast: true
+            #priority: 25
+            resync_timeout: 10
+            #shutdown: true
+            #ttl_security:
+             # hops: 50
+       - name: Loopback0
+         address_family:
+          - afi: ipv4
+            process:
+              id: 1
+              area_id: 0
+            adjacency: true
+            #bfd: true
+            #cost:
+             # interface_cost: 5
+            dead_interval:
+              time: 5
+            #demand_circuit:
+             # ignore: true
+            network:
+              broadcast: true
+            #priority: 25
+            resync_timeout: 10
+            #shutdown: true
+            #ttl_security:
+             # hops: 50
+       - name: GigabitEthernet0/0
+         address_family:
+          - afi: ipv4
+            process:
+              id: 1
+              area_id: 0
+            adjacency: true
+            #bfd: true
+            #cost:
+             # interface_cost: 5
+            dead_interval:
+              time: 5
+            #demand_circuit:
+             # ignore: true
+            network:
+              broadcast: true
+            #priority: 25
+            resync_timeout: 10
+            #shutdown: true
+            #ttl_security:
+             # hops: 50     
+      state: merged
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+---
+- hosts: R2
+
+  tasks:
+  - name: Configure OSPF on R2
+    cisco.ios.ios_ospfv2:
+       config:
+        processes:
+        - process_id: 1
+          max_metric:
+           router_lsa: true
+           on_startup:
+            time: 110
+          
+     
+          network:
+           -  address: 198.168.3.0
+              wildcard_bits: 0.0.0.255
+              area: 0
+           -  address: 198.168.4.0
+              wildcard_bits: 0.0.0.3
+              area: 0
+       state: replaced
+
+
+- hosts: R3
+
+  tasks:
+  - name: Configure OSPF on R3
+    cisco.ios.ios_ospfv2:
+      config:
+        processes:
+        - process_id: 1
+        
+     
+          network:
+           -  address: 198.168.5.0
+              wildcard_bits: 0.0.0.255
+              area: 0
+           -  address: 198.168.77.0
+              wildcard_bits: 0.0.0.3
+              area: 0
+           -  address: 198.168.4.0
+              wildcard_bits: 0.0.0.3
+              area: 0
+        
+      state: replaced
+
+
+
+
+
+

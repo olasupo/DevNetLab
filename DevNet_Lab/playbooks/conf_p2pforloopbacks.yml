@@ -1,0 +1,20 @@
+---
+
+- hosts: R1
+
+  tasks:
+    - name: Configure interface settings
+      cisco.ios.ios_config:
+        lines:
+        - ip ospf network point-to-point
+        parents: interface loopback1
+
+- hosts: routers
+
+  tasks:
+    - name: Configure interface settings
+      cisco.ios.ios_config:
+        lines:
+        - ip ospf network point-to-point
+        parents: interface loopback0
+
