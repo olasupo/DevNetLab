@@ -1,0 +1,26 @@
+---
+
+- hosts: R1
+
+  tasks:
+    - name: EIGRP Configuration on R1
+      cisco.ios.ios_config:
+        lines:
+        - router eigrp 10
+        - network 192.168.1.129 0.0.0.255
+        - network 192.168.2.1 0.0.0.3
+        - network 192.168.6.1 0.0.0.3
+        - network 192.168.0.1 0.0.0.3
+       
+        replace: "line"
+
+
+- hosts: R2
+
+  tasks:
+    - name: EIGRP Configuration on R2
+      cisco.ios.ios_config:
+        lines:
+        - router eigrp 10
+        - network 192.168.2.2 0.0.0.3
+        - redistribute ospf 1 metric 1 1 1 1 1

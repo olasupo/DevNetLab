@@ -14,20 +14,12 @@
               id: 1
               area_id: 0
             adjacency: true
-            #bfd: true
-            #cost:
-             # interface_cost: 5
             dead_interval:
               time: 60
-            #demand_circuit:
-             # ignore: true
             network:
               broadcast: true
-            #priority: 25
             resync_timeout: 10
-            #shutdown: true
-            #ttl_security:
-             # hops: 50
+            
        - name: Loopback0
          address_family:
           - afi: ipv4
@@ -35,20 +27,11 @@
               id: 1
               area_id: 0
             adjacency: true
-            #bfd: true
-            #cost:
-             # interface_cost: 5
             dead_interval:
               time: 60
-            #demand_circuit:
-             # ignore: true
             network:
               broadcast: true
-            #priority: 25
             resync_timeout: 10
-            #shutdown: true
-            #ttl_security:
-             # hops: 50
       state: merged
 
 
@@ -65,20 +48,11 @@
               id: 1
               area_id: 0
             adjacency: true
-            #bfd: true
-            #cost:
-             # interface_cost: 5
             dead_interval:
               time: 60
-            #demand_circuit:
-             # ignore: true
             network:
               broadcast: true
-            #priority: 25
             resync_timeout: 10
-            #shutdown: true
-            #ttl_security:
-             # hops: 50
        - name: Loopback0
          address_family:
           - afi: ipv4
@@ -86,20 +60,11 @@
               id: 1
               area_id: 0
             adjacency: true
-            #bfd: true
-            #cost:
-             # interface_cost: 5
             dead_interval:
               time: 60
-            #demand_circuit:
-             # ignore: true
             network:
               broadcast: true
-            #priority: 25
             resync_timeout: 10
-            #shutdown: true
-            #ttl_security:
-             # hops: 50
        - name: GigabitEthernet0/0
          address_family:
           - afi: ipv4
@@ -107,20 +72,12 @@
               id: 1
               area_id: 0
             adjacency: true
-            #bfd: true
-            #cost:
-             # interface_cost: 5
             dead_interval:
               time: 60
-            #demand_circuit:
-             # ignore: true
             network:
               broadcast: true
-            #priority: 25
             resync_timeout: 10
-            #shutdown: true
-            #ttl_security:
-             # hops: 50     
+                 
       state: merged
 
 

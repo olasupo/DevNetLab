@@ -1,0 +1,11 @@
+---
+
+- hosts: routers
+
+  tasks:
+
+   - name: reload device
+     ios_command:
+        commands:
+           - "reload"
+        provider: "{{ cli }}"
