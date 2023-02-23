@@ -18,7 +18,7 @@
             #cost:
              # interface_cost: 5
             dead_interval:
-              time: 5
+              time: 60
             #demand_circuit:
              # ignore: true
             network:
@@ -39,7 +39,7 @@
             #cost:
              # interface_cost: 5
             dead_interval:
-              time: 5
+              time: 60
             #demand_circuit:
              # ignore: true
             network:
@@ -69,7 +69,7 @@
             #cost:
              # interface_cost: 5
             dead_interval:
-              time: 5
+              time: 60
             #demand_circuit:
              # ignore: true
             network:
@@ -90,7 +90,7 @@
             #cost:
              # interface_cost: 5
             dead_interval:
-              time: 5
+              time: 60
             #demand_circuit:
              # ignore: true
             network:
@@ -111,7 +111,7 @@
             #cost:
              # interface_cost: 5
             dead_interval:
-              time: 5
+              time: 60
             #demand_circuit:
              # ignore: true
             network:

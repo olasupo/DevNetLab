@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+
+  tasks:
+    - ansible.builtin.debug:
+        msg: Multi-Playbook Execution....
+
+
+- name: Begin Execution of Playbook For Interface Configurations
+  ansible.builtin.import_playbook: conf_int.yml
+
+- name: Begin Execution of Playbook For P2P Configuration On Loopback Interfaces 
+  ansible.builtin.import_playbook: conf_p2pforloopbacks.yml
+
+- name: Begin Execution of Playbook For Enabling OSPF on R2 and R3  
+  ansible.builtin.import_playbook: enable_ospfv2.yml
+
+- name: Begin Execution of Playbook For OSPF Interface Configuration on R2 and R3  
+  ansible.builtin.import_playbook: conf_ospf_interfaces.yml
+
+- name: Begin Execution of Playbook For BGP Configuration on R3 and R4  
+  ansible.builtin.import_playbook: conf_bgp.yml
+
+
+
+
+
+
+

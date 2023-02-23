@@ -4,7 +4,7 @@
  - hosts: R1
 
    tasks:
-    - name: Creating Loopback Interfaces & Configuring IPv4 and IPv6 Addresses on Them 
+    - name: Loopback Interface Creation & IPv4 and IPv6 Configuration 
       cisco.ios.ios_l3_interfaces:
        config:
        - name: Loopback0
@@ -22,7 +22,7 @@
  - hosts: R2
 
    tasks:
-   - name: Creating Loopback Interfaces & Configuring IPv4 and IPv6 Addresses on Them
+   - name: Loopback Interface Creation & IPv4 and IPv6 Configuration 
      cisco.ios.ios_l3_interfaces:
       config:
       - name: Loopback0
@@ -32,11 +32,10 @@
         - address: 2001:DB8:CAFE:3::/64
       state: replaced
 
-
  - hosts: R3
 
    tasks:
-   - name: Creating Loopback Interfaces & Configuring IPv4 and IPv6 Addresses on Them
+   - name: Loopback Interface Creation & IPv4 and IPv6 Configuration 
      cisco.ios.ios_l3_interfaces:
       config:
       - name: Loopback0
@@ -46,6 +45,18 @@
         - address: 2001:DB8:CAFE:5::/64
       state: replaced
 
+ - hosts: R4
+
+   tasks:
+    - name: Loopback Interface Creation & IPv4 and IPv6 Configuration 
+      cisco.ios.ios_l3_interfaces:
+       config:
+       - name: Loopback0
+         ipv4:
+         - address: 192.168.99.1/24
+         ipv6:
+         - address: 2001:DB8:99:1::/64
+       state: replaced
 
  - hosts: R1
 
@@ -86,17 +97,6 @@
            - address: 2001:DB8:CAFE:4::2/64
         state: merged
 
- - hosts: R4
 
-   tasks:
-    - name: Creating Loopback Interfaces & Configuring IPv4 and IPv6 Addresses on Them
-      cisco.ios.ios_l3_interfaces:
-       config:
-       - name: Loopback0
-         ipv4:
-         - address: 192.168.99.1/24
-         ipv6:
-         - address: 2001:DB8:99:1::/64
-       state: replaced
   
 ...
