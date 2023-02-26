@@ -30,5 +30,7 @@ ospfloopback:
   ansible_ssh_pass: cisco123
   ansible_host_key_checking: False
 
+  ###
+
 ...
 
