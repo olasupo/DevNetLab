@@ -15,6 +15,7 @@ routers:
   ansible_network_os: ios
   ansible_user: cisco
   ansible_ssh_pass: cisco123
+  ansible_host_key_checking: False
    
 
 ospfloopback:
@@ -29,6 +30,7 @@ ospfloopback:
   ansible_user: cisco
   ansible_ssh_pass: cisco123
   ansible_host_key_checking: False
+  
 
   ###
 
