@@ -16,7 +16,8 @@ routers:
   ansible_user: cisco
   ansible_ssh_pass: cisco123
   ansible_host_key_checking: False
-  ansible_ssh_extra_args: '-o StrictHostKeyChecking=accept-new'
+  ansible_ssh_extra_args: '-o StrictHostKeyChecking=no'
+  ansible_gather_facts: false
    
 
 ospfloopback:
@@ -31,7 +32,8 @@ ospfloopback:
   ansible_user: cisco
   ansible_ssh_pass: cisco123
   ansible_host_key_checking: False
-  ansible_ssh_extra_args: '-o StrictHostKeyChecking=accept-new'
+  ansible_ssh_extra_args: '-o StrictHostKeyChecking=no'
+  ansible_gather_facts: false
   
 
   ###
