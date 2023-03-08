@@ -3,44 +3,30 @@
 - hosts: R3
 
   tasks:
-    - name: BGP configuration On R3
-      cisco.ios.ios_bgp_global:
-        config:
-           as_number: 65000
-           bgp:
-             
-             log_neighbor_changes: true
-             
-           networks:
-              - address: 192.168.77.1
-              
-           neighbor:
-              - address: 192.168.77.2
-                description: ISP
-                remote_as: 65100
-               
-        state: replaced
-
-
+  - name: Configure BGP On R3
+    cisco.ios.ios_bgp:
+      config:
+        bgp_as: 65000
+        log_neighbor_changes: true
+        neighbors:
+        - neighbor: 192.168.77.2
+          remote_as: 65100
+        networks:
+        - prefix:  192.168.77.1
+      operation: replace
 
 - hosts: R4
-
   tasks:
-    - name: BGP configuration On R4
-      cisco.ios.ios_bgp_global:
-        config:
-           as_number: 65100
-           bgp:
-             
-             log_neighbor_changes: true
-             
-           networks:
-              - address: 192.168.77.2
-          
-           neighbor:
-              - address: 192.168.77.1
-                description: BCU
-                remote_as: 65000
-          
-          
-        state: replaced
+  - name: Configure BGP On R4
+    cisco.ios.ios_bgp:
+      config:
+        bgp_as: 65100
+        log_neighbor_changes: true
+        neighbors:
+        - neighbor: 192.168.77.1
+          remote_as: 65000
+        networks:
+        - prefix:  192.168.77.2
+      operation: replace
+
+...
