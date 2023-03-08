@@ -11,15 +11,15 @@ routers:
    ansible_host: 192.168.77.2
 
  vars:
-  ansible_connection: network_cli
-  ansible_network_os: ios
+  #ansible_connection: network_cli
+  #ansible_network_os: ios
  # ansible_user: cisco
  # ansible_ssh_pass: cisco123
 
-  ansible_gather_facts: False
+  #ansible_gather_facts: False
  
   
-  ansible_paramiko_host_key_checking: False
+  #ansible_paramiko_host_key_checking: False
   
   
   #paramiko_host_key_checking: False
