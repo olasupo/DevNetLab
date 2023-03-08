@@ -18,7 +18,7 @@ routers:
   ansible_host_key_checking: False
   ansible_ssh_extra_args: '-o StrictHostKeyChecking=no'
   ansible_gather_facts: False
-  ansible_host_key_checking: False
+ # ansible_host_key_checking: False
   ansible_ssh_host_key_checking: False
   ansible_paramiko_host_key_checking: False
   host_key_checking: False
