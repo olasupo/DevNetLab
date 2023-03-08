@@ -14,7 +14,7 @@ routers:
   ansible_connection: network_cli
   ansible_network_os: ios
   ansible_user: cisco
- # ansible_ssh_pass: cisco123
+  ansible_ssh_pass: cisco123
 
   #ansible_gather_facts: False
  
