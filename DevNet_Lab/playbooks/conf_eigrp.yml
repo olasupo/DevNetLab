@@ -24,3 +24,4 @@
         - router eigrp 10
         - network 192.168.2.2 0.0.0.3
         - redistribute ospf 1 metric 1 1 1 1 1
+        replace: "line"
