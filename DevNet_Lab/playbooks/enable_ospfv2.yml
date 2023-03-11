@@ -1,5 +1,6 @@
 ---
 - hosts: R2
+  gather_facts: false
 
   tasks:
   - name: Configure OSPF on R2
@@ -8,17 +9,17 @@
         processes:
         - process_id: 1
           network:
-           -  address: 198.168.3.0
+           -  address: 192.168.3.0
               wildcard_bits: 0.0.0.255
-              area: 1
-           -  address: 198.168.4.0
+              area: '1'
+           -  address: 192.168.4.0
               wildcard_bits: 0.0.0.3
-              area: 1
+              area: '1'
        state: replaced
 
 
 - hosts: R3
-
+  gather_facts: false
   tasks:
   - name: Configure OSPF on R3
     cisco.ios.ios_ospfv2:
@@ -26,20 +27,21 @@
         processes:
         - process_id: 1
           network:
-           -  address: 198.168.5.0
+           -  address: 10.10.10.0
+              wildcard_bits: 0.0.0.3
+              area: '0'
+           -  address: 192.168.4.0
+              wildcard_bits: 0.0.0.3
+              area: '1'
+           -  address: 192.168.5.0
               wildcard_bits: 0.0.0.255
-              area: 1
-           -  address: 198.168.4.0
-              wildcard_bits: 0.0.0.3
-              area: 1
-           -  address: 10.10.10.1
-              wildcard_bits: 0.0.0.3
-              area: 0
+              area: '1'
+           
         
       state: replaced
 
 - hosts: R4
-
+  gather_facts: false
   tasks:
   - name: Configure OSPF on R4 for Inter-Area Routing
     cisco.ios.ios_ospfv2:
@@ -47,12 +49,12 @@
         processes:
         - process_id: 1
           network:
-           -  address: 192.168.99.1
+           -  address: 192.168.99.0
               wildcard_bits: 0.0.0.255
-              area: 2
-           -  address: 10.10.10.2
+              area: '2'
+           -  address: 10.10.10.0
               wildcard_bits: 0.0.0.3
-              area: 0
+              area: '0'
            
         
       state: replaced

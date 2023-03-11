@@ -2,6 +2,7 @@
 
 
  - hosts: R1
+   gather_facts: false
 
    tasks:
     - name: Loopback Interface Creation & IPv4 and IPv6 Configuration 
@@ -9,93 +10,93 @@
        config:
        - name: Loopback0
          ipv4:
-         - address: 192.168.6.1/24
-         ipv6:
-         - address: 2001:DB8:CAFE:6::/64
+         - address: 192.168.6.1 255.255.255.0
+#         ipv6:
+#         - address: 2001:DB8:CAFE:6::/64
        - name: Loopback1
          ipv4:
-         - address: 192.168.0.1/24
-         ipv6:
-         - address: 2001:DB8:CAFE:1::/64
+         - address: 192.168.0.1 255.255.255.0
+ #        ipv6:
+ #        - address: 2001:DB8:CAFE:1::/64
        state: replaced
 
  - hosts: R2
-
+   gather_facts: false
    tasks:
    - name: Loopback Interface Creation & IPv4 and IPv6 Configuration 
      cisco.ios.ios_l3_interfaces:
       config:
       - name: Loopback0
         ipv4:
-        - address: 192.168.3.1/24
-        ipv6:
-        - address: 2001:DB8:CAFE:3::/64
+        - address: 192.168.3.1 255.255.255.0
+ #       ipv6:
+ #       - address: 2001:DB8:CAFE:3::/64
       state: replaced
 
  - hosts: R3
-
+   gather_facts: false
    tasks:
    - name: Loopback Interface Creation & IPv4 and IPv6 Configuration 
      cisco.ios.ios_l3_interfaces:
       config:
       - name: Loopback0
         ipv4:
-        - address: 192.168.5.1/24
-        ipv6:
-        - address: 2001:DB8:CAFE:5::/64
+        - address: 192.168.5.1 255.255.255.0
+ #       ipv6:
+ #       - address: 2001:DB8:CAFE:5::/64
       state: replaced
 
  - hosts: R4
-
+   gather_facts: false
    tasks:
     - name: Loopback Interface Creation & IPv4 and IPv6 Configuration 
       cisco.ios.ios_l3_interfaces:
        config:
        - name: Loopback0
          ipv4:
-         - address: 192.168.99.1/24
-         ipv6:
-         - address: 2001:DB8:99:1::/64
+         - address: 192.168.99.1 255.255.255.0
+ #        ipv6:
+ #        - address: 2001:DB8:99:1::/64
        state: replaced
 
- - hosts: R1
+# - hosts: R1
+#   gather_facts: false
+#   tasks:
+#    - name: IPV6 Configuration on R1 Interfaces
+#      cisco.ios.ios_l3_interfaces:
+#        config:
+#        - name: GigabitEthernet0/0
+#          ipv6:
+#          - address: 2001:DB8:CAFE:2::1/64
+#        state: merged
 
-   tasks:
-    - name: IPV6 Configuration on R1 Interfaces
-      cisco.ios.ios_l3_interfaces:
-        config:
-        - name: GigabitEthernet0/0
-          ipv6:
-          - address: 2001:DB8:CAFE:2::1/64 
-        state: merged
-
- - hosts: R2
-
-   tasks:
-    - name: IPV6 Configuration on R2 Interfaces
-      cisco.ios.ios_l3_interfaces:
-        config:
-        - name: GigabitEthernet0/0
-          ipv6:
-          - address: 2001:DB8:CAFE:2::2/64
-        - name: GigabitEthernet0/1
-          ipv6:
-          - address: 2001:DB8:CAFE:4::1/64
-        state: merged
+ #- hosts: R2
+  # gather_facts: false
+  # tasks:
+   # - name: IPV6 Configuration on R2 Interfaces
+   #   cisco.ios.ios_l3_interfaces:
+    #    config:
+    #    - name: GigabitEthernet0/0
+    #      ipv6:
+    #      - address: 2001:DB8:CAFE:2::2/64
+        #- name: GigabitEthernet0/1
+         # ipv6:
+          #- address: 2001:DB8:CAFE:4::1/64
+    #    state: merged
        
- - hosts: R3
-
-   tasks:
-    - name: IPV6 Configuration on R3 Interfaces
-      cisco.ios.ios_l3_interfaces:
-        config:
-        - name: GigabitEthernet0/0
-          ipv6:
-          - address: 2001:DB8:FEED:77::1/64
-        - name: GigabitEthernet0/1
-          ipv6:
-           - address: 2001:DB8:CAFE:4::2/64
-        state: merged
+ #- hosts: R3
+ #  gather_facts: false
+ #  tasks:
+ #   - name: IPV6 Configuration on R3 Interfaces
+ #     cisco.ios.ios_l3_interfaces:
+ #       config:
+ #       - name: GigabitEthernet0/0
+ #         ipv6:
+ #         - address: 2001:DB8:FEED:77::1/64
+ #       - name: GigabitEthernet0/1
+ #         ipv6:
+  #         - address: 2001:DB8:CAFE:4::2/64
+  #      state: merged
 
 
   

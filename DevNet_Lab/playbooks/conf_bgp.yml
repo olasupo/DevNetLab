@@ -1,6 +1,7 @@
 ---
 
 - hosts: R3
+  gather_facts: false
 
   tasks:
   - name: Configure BGP On R3
@@ -16,6 +17,7 @@
       operation: replace
 
 - hosts: R4
+  gather_facts: false
   tasks:
   - name: Configure BGP On R4
     cisco.ios.ios_bgp:

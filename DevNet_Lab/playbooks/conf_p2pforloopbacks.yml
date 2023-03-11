@@ -1,20 +1,21 @@
 ---
 
 - hosts: R1
+  gather_facts: false
 
   tasks:
     - name: Configure interface settings
       cisco.ios.ios_config:
         lines:
         - ip ospf network point-to-point
-        parents: interface loopback1
+        parents: interface Loopback1
 
 - hosts: routers
-
+  gather_facts: false
   tasks:
     - name: Configure interface settings
       cisco.ios.ios_config:
         lines:
         - ip ospf network point-to-point
-        parents: interface loopback0
+        parents: interface Loopback0
 

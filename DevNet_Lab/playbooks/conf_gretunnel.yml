@@ -1,6 +1,7 @@
 ---
 
 - hosts: R3
+  gather_facts: false
 
   tasks:
     - name: GRE Tunnel Configuration on R3
@@ -12,7 +13,7 @@
         parents: interface Tunnel1
 
 - hosts: R4
-
+  gather_facts: false
   tasks:
     - name: GRE Tunnel Configuration on R4
       cisco.ios.ios_config:

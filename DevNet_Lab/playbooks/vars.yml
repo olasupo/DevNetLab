@@ -1,0 +1,25 @@
+---
+
+
+- hosts: localhost
+  gather_facts: False
+
+  vars_files:
+    - var.yml
+
+  
+    
+ 
+  vars_prompt:
+    - name: username
+      private: False
+    - name: lastname
+      private: False
+
+  tasks:
+    - name: Testing Variables
+      debug:
+        msg: Welcome {{username}} {{lastname}}. We are gonna excite you now.
+    - name: Other Checks
+      debug:
+        msg: Welcome {{ext_vars.ansible_user}} {{ext_vars.ansible_ssh_pass}}. We are gonna excite you now.

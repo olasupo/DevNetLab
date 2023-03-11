@@ -2,7 +2,7 @@
 
 
 - hosts: R2
-
+  gather_facts: false
   tasks:
    - name: Begin OSPF Interface configurations for R2
      cisco.ios.ios_ospf_interfaces:
@@ -12,31 +12,28 @@
           - afi: ipv4
             process:
               id: 1
-              area_id: 0
-            adjacency: true
+              area_id: '1'
+            
             dead_interval:
               time: 60
-            network:
-              broadcast: true
-            resync_timeout: 10
-            
+                     
        - name: Loopback0
          address_family:
           - afi: ipv4
             process:
               id: 1
-              area_id: 0
-            adjacency: true
+              area_id: '1'
+            
             dead_interval:
               time: 60
-            network:
-              broadcast: true
-            resync_timeout: 10
+            
+            
+            
       state: merged
 
 
 - hosts: R3
-
+  gather_facts: false
   tasks:
    - name: Begin OSPF Interface configurations for R3
      cisco.ios.ios_ospf_interfaces:
@@ -46,37 +43,37 @@
           - afi: ipv4
             process:
               id: 1
-              area_id: 0
-            adjacency: true
+              area_id: '0'
+            
             dead_interval:
               time: 60
-            network:
-              broadcast: true
-            resync_timeout: 10
+            
+            
+            
        - name: Loopback0
          address_family:
           - afi: ipv4
             process:
               id: 1
-              area_id: 0
-            adjacency: true
+              area_id: '1'
+            
             dead_interval:
               time: 60
-            network:
-              broadcast: true
-            resync_timeout: 10
+            
+            
+            
        - name: GigabitEthernet0/0
          address_family:
           - afi: ipv4
             process:
               id: 1
-              area_id: 0
-            adjacency: true
+              area_id: '1'
+            
             dead_interval:
               time: 60
-            network:
-              broadcast: true
-            resync_timeout: 10
+            
+            
+            
                  
       state: merged
 

@@ -1,11 +1,20 @@
+
 ---
-
-- hosts: routers
-
+- hosts: R2
   tasks:
-
-   - name: reload device
+   - name: reboot ios device
      ios_command:
-        commands:
-           - "reload"
-        provider: "{{ cli }}"
+        command: reload
+        prompt:
+         - Save?
+         - confirm
+        answer:
+         - y
+         - y
+
+   - name: reset the connection
+     meta: reset_connection
+
+   - name: Wait for the network device to reload
+     wait_for_connection:
+     delay: 2   
