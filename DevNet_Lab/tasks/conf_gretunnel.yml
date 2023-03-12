@@ -1,0 +1,24 @@
+---
+
+- hosts: R3
+  gather_facts: false
+
+  tasks:
+    - name: GRE Tunnel Configuration on R3
+      cisco.ios.ios_config:
+        lines:
+        - ip address 10.10.10.1 255.255.255.252
+        - tunnel source 192.168.77.1
+        - tunnel destination 192.168.77.2
+        parents: interface Tunnel1
+
+- hosts: R4
+  gather_facts: false
+  tasks:
+    - name: GRE Tunnel Configuration on R4
+      cisco.ios.ios_config:
+        lines:
+        - ip address 10.10.10.2 255.255.255.252
+        - tunnel source 192.168.77.2
+        - tunnel destination 192.168.77.1
+        parents: interface Tunnel2
