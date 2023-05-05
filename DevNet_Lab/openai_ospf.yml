@@ -1,0 +1,31 @@
+---
+- name: Configure OSPF
+  hosts: all
+  vars:
+    ospf_process_id: 1
+    routers:
+      - name: R2
+        host: 192.168.2.2
+        networks:
+          - 192.168.3.0/24
+          - 192.168.4.0/30
+      - name: R4
+        host: 192.168.4.2
+        networks:
+          - 10.10.10.0/30
+          - 192.168.4.0/30
+          - 192.168.5.0/30
+  tasks:
+    - name: Configure OSPF on routers
+      ios_config:
+        lines:
+          - router ospf {{ospf_process_id}}
+          - network {{item.network}} area 0
+        provider:
+          host: "{{item.host}}"
+          username: "cisco"
+          password: "cisco123"
+          authorize: yes
+          auth_pass: "cisco123"
+      with_items: "{{routers | subelements('networks')}}"
+      when: item.1 is defined
