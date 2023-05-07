@@ -1,5 +1,8 @@
 ---
 
+#This playbook executes all the playbooks required to automate
+#the network interface configurations, BPG, GRE Tunnel, OSPF and EIGRP
+#protocols. The file runs sequentially from top to bottom.
 
 - name: Begin Execution of Playbook For Interface Configurations
   import_playbook: tasks/conf_int.yml
