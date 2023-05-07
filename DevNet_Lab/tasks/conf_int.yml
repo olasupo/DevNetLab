@@ -1,5 +1,7 @@
 ---
 
+#This playbook configures the loopback interfaces on each of the routers
+
  - hosts: R1
    gather_facts: false
  
