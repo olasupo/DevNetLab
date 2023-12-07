@@ -1,7 +1,8 @@
 ---
 
-#This is the hosts file. It is in yml format and contains anything
+#This is the hosts file. It is in yml format and contains
 #the IP address and credentials of each router on the network
+#It all works fine..extraline
 routers:
     hosts:
       R1:
