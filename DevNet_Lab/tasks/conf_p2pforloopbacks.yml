@@ -2,7 +2,7 @@
 
 #This configuration makes the loopback interfaces routable
 
-- hosts: R1
+- hosts: routers
   gather_facts: false
 
   tasks:
