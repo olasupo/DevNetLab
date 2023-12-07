@@ -17,7 +17,7 @@
          ipv4:
          - address: 192.168.20.1 255.255.255.0
 
-       state: present
+       state: overridden
 
  - hosts: R2
    gather_facts: false
@@ -33,7 +33,7 @@
         ipv4:
         - address: 192.168.40.1 255.255.255.0
 
-      state: present
+      state: overridden
 
  - hosts: R3
    gather_facts: false
@@ -50,7 +50,7 @@
         - address: 192.168.60.1 255.255.255.0
         
 
-      state: present
+      state: overridden
 
  - hosts: R4
    gather_facts: false
@@ -66,7 +66,7 @@
          ipv4:
          - address: 192.168.80.1 255.255.255.0
        
-       state: present
+       state: overridden
 
 
 
