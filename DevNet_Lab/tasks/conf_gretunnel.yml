@@ -1,5 +1,7 @@
 ---
 
+#This file configures a Gre Tunnel between Routers 3 and 4
+
 - hosts: R3
   gather_facts: false
 
@@ -22,3 +24,8 @@
         - tunnel source 192.168.77.2
         - tunnel destination 192.168.77.1
         parents: interface Tunnel2
+        
+...
+
+
+

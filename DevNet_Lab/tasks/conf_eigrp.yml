@@ -1,5 +1,7 @@
 ---
 
+#This file configures EIGRP on Routers 1 and 2
+
 - hosts: R1
   gather_facts: False
   tasks:
@@ -34,4 +36,7 @@
         parents: "router ospf 1"
         lines: 
         - redistribute eigrp 10 subnets
-        
+...
+
+
+

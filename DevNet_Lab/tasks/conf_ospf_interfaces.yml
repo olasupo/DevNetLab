@@ -1,5 +1,6 @@
 ---
 
+#This file configures OSPF protocol on Routers 2 and 3
 
 - hosts: R2
   gather_facts: false
@@ -77,6 +78,7 @@
                  
       state: merged
 
+...
 
 
 

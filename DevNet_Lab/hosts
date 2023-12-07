@@ -5,13 +5,13 @@
 routers:
     hosts:
       R1:
-        ansible_host: 192.168.1.17
+        ansible_host: 172.168.1.17
       R2:
         ansible_host: 192.168.2.2
       R3:
         ansible_host: 192.168.4.2
       R4:
-        ansible_host: 192.168.77.2
+        ansible_host: 192.168.6.2
 
     vars:
       ansible_connection: network_cli

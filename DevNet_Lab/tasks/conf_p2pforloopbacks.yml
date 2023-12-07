@@ -1,5 +1,7 @@
 ---
 
+#This configuration makes the loopback interfaces routable
+
 - hosts: R1
   gather_facts: false
 
@@ -18,4 +20,7 @@
         lines:
         - ip ospf network point-to-point
         parents: interface Loopback0
+        
+
+...
 
