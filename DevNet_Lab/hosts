@@ -1,6 +1,6 @@
 ---
 
-#This is the hosts file. It is in yml format and contains 
+#This is the hosts file. It is in yml format and contains anything
 #the IP address and credentials of each router on the network
 routers:
     hosts:
