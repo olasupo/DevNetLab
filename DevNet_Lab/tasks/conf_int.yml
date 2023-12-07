@@ -29,6 +29,8 @@
       - name: Loopback0
         ipv4:
         - address: 192.168.30.1 255.255.255.0
+      - name: Loopback1
+        ipv4:
         - address: 192.168.40.1 255.255.255.0
 
       state: replaced
@@ -43,7 +45,10 @@
       - name: Loopback0
         ipv4:
         - address: 192.168.50.1 255.255.255.0
+      - name: Loopback1
+        ipv4:
         - address: 192.168.60.1 255.255.255.0
+        
 
       state: replaced
 
@@ -57,9 +62,10 @@
        - name: Loopback0
          ipv4:
          - address: 192.168.70.1 255.255.255.0
+       - name: Loopback1
+         ipv4:
          - address: 192.168.80.1 255.255.255.0
-
-
+       
        state: replaced
 
 
