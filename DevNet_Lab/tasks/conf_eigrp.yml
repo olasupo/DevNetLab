@@ -9,10 +9,10 @@
       cisco.ios.ios_config:
         parents: "router eigrp 10"
         lines:
-        - network 192.168.1.0
+        - network 172.168.1.0 0.0.0.255
         - network 192.168.2.0 0.0.0.3
-        - network 192.168.6.0 0.0.0.3
-        - network 192.168.0.0 0.0.0.3
+        - network 192.168.10.0 0.0.0.255
+        - network 192.168.20.0 0.0.0.255
        
         
 
@@ -25,6 +25,9 @@
         parents: "router eigrp 10"
         lines:
         - network 192.168.2.0 0.0.0.3
+        - network 192.168.4.0 0.0.0.3
+        - network 192.168.30.0 0.0.0.255
+        - network 192.168.40.0 0.0.0.255
         - redistribute ospf 1 metric 1 1 1 1 1
         
 
