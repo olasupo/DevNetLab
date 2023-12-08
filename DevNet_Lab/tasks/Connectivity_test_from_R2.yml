@@ -1,0 +1,31 @@
+---
+- name: Ping Test on R2
+  hosts: R2
+  gather_facts: false
+
+  tasks:
+    - name: Ping 192.168.30.1
+      ansible.builtin.ping:
+        host: 192.168.30.1
+
+    - name: Ping 192.168.40.1
+      ansible.builtin.ping:
+        host: 192.168.40.1
+
+    - name: Ping 192.168.50.1
+      ansible.builtin.ping:
+        host: 192.168.50.1
+
+    - name: Ping 192.168.60.150
+      ansible.builtin.ping:
+        host: 192.168.60.150
+
+    - name: Ping 192.168.10.1
+      ansible.builtin.ping:
+        host: 192.168.10.1
+
+    - name: Ping 192.168.20.1
+      ansible.builtin.ping:
+        host: 192.168.20.1
+
+
