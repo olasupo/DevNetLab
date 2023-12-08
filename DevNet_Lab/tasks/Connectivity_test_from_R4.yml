@@ -1,6 +1,6 @@
 ---
-- name: Ping Test on R2
-  hosts: R2
+- name: Ping Test on R4
+  hosts: R4
   gather_facts: false
 
   tasks:
@@ -47,6 +47,13 @@
 
     - name: Fail the task if any ping fails
       fail:
-        msg: "Ping to at least one address failed"
+        msg: >
+          "Ping tests failed for the following addresses:
+          {% if ping_result_30.rc != 0 %} 192.168.30.1 {% endif %}
+          {% if ping_result_40.rc != 0 %} 192.168.40.1 {% endif %}
+          {% if ping_result_50.rc != 0 %} 192.168.50.1 {% endif %}
+          {% if ping_result_60.rc != 0 %} 192.168.60.150 {% endif %}
+          {% if ping_result_10.rc != 0 %} 192.168.10.1 {% endif %}
+          {% if ping_result_20.rc != 0 %} 192.168.20.1 {% endif %}"
       when: "ping_result_30.rc != 0 or ping_result_40.rc != 0 or ping_result_50.rc != 0 or ping_result_60.rc != 0 or ping_result_10.rc != 0 or ping_result_20.rc != 0"
 

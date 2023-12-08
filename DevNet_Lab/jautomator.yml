@@ -28,8 +28,8 @@
 - name: Network Connectivity Test From R1
   import_playbook: tasks/Connectivity_test_from_R1.yml
   
-- name: Network Connectivity Test From R2
-  import_playbook: tasks/Connectivity_test_from_R2.yml
+- name: Network Connectivity Test From R4
+  import_playbook: tasks/Connectivity_test_from_R4.yml
   
   
 ...
