@@ -18,7 +18,7 @@
             dead_interval:
               time: 60
                      
-       - name: Loopback0
+       - name: GigabitEthernet0/1
          address_family:
           - afi: ipv4
             process:
@@ -27,7 +27,15 @@
             
             dead_interval:
               time: 60
+       - name: GigabitEthernet0/3
+         address_family:
+          - afi: ipv4
+            process:
+              id: 1
+              area_id: '1'
             
+            dead_interval:
+              time: 60
             
             
       state: merged
@@ -51,7 +59,7 @@
             
             
             
-       - name: Loopback0
+       - name: GigabitEthernet0/2
          address_family:
           - afi: ipv4
             process:
@@ -60,7 +68,15 @@
             
             dead_interval:
               time: 60
+       - name: GigabitEthernet0/3
+         address_family:
+          - afi: ipv4
+            process:
+              id: 1
+              area_id: '1'
             
+            dead_interval:
+              time: 60
             
             
        - name: GigabitEthernet0/0

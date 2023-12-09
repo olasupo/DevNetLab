@@ -7,9 +7,6 @@
 - name: Begin Execution of Playbook For Interface Configurations
   import_playbook: tasks/conf_int.yml
 
-- name: Begin Execution of Playbook For P2P Configuration On Loopback Interfaces
-  import_playbook: tasks/conf_p2pforloopbacks.yml
-
 - name: Begin Execution of Playbook For BGP Configuration on R3 and R4
   import_playbook: tasks/conf_bgp.yml
 
