@@ -10,8 +10,13 @@
           - name: GigabitEthernet0/2
             ipv4:
               - address: 192.168.10.1 255.255.255.0
-            shutdown: no  # Add this line to enable the interface
         state: merged
+
+    - name: No Shutdown GigabitEthernet0/2
+      cisco.ios.ios_config:
+        lines:
+          - no shutdown
+        parents: interface GigabitEthernet0/2
 
     - name: GigabitEthernet0/3 Configuration 
       cisco.ios.ios_l3_interfaces:
@@ -19,8 +24,13 @@
           - name: GigabitEthernet0/3
             ipv4:
               - address: 192.168.20.1 255.255.255.0
-            shutdown: no  # Add this line to enable the interface
         state: merged
+
+    - name: No Shutdown GigabitEthernet0/3
+      cisco.ios.ios_config:
+        lines:
+          - no shutdown
+        parents: interface GigabitEthernet0/3
 
 - hosts: R2
   gather_facts: false
@@ -32,8 +42,13 @@
           - name: GigabitEthernet0/1
             ipv4:
               - address: 192.168.30.1 255.255.255.0
-            shutdown: no  # Add this line to enable the interface
         state: merged
+
+    - name: No Shutdown GigabitEthernet0/1
+      cisco.ios.ios_config:
+        lines:
+          - no shutdown
+        parents: interface GigabitEthernet0/1
 
     - name: GigabitEthernet0/3 Configuration 
       cisco.ios.ios_l3_interfaces:
@@ -41,8 +56,13 @@
           - name: GigabitEthernet0/3
             ipv4:
               - address: 192.168.40.1 255.255.255.0
-            shutdown: no  # Add this line to enable the interface
         state: merged
+
+    - name: No Shutdown GigabitEthernet0/3
+      cisco.ios.ios_config:
+        lines:
+          - no shutdown
+        parents: interface GigabitEthernet0/3
 
 - hosts: R3
   gather_facts: false
@@ -54,8 +74,13 @@
           - name: GigabitEthernet0/2
             ipv4:
               - address: 192.168.50.1 255.255.255.0
-            shutdown: no  # Add this line to enable the interface
         state: merged
+
+    - name: No Shutdown GigabitEthernet0/2
+      cisco.ios.ios_config:
+        lines:
+          - no shutdown
+        parents: interface GigabitEthernet0/2
 
     - name: GigabitEthernet0/3 Configuration 
       cisco.ios.ios_l3_interfaces:
@@ -63,8 +88,13 @@
           - name: GigabitEthernet0/3
             ipv4:
               - address: 192.168.60.1 255.255.255.0
-            shutdown: no  # Add this line to enable the interface
         state: merged
+
+    - name: No Shutdown GigabitEthernet0/3
+      cisco.ios.ios_config:
+        lines:
+          - no shutdown
+        parents: interface GigabitEthernet0/3
 
 - hosts: R4
   gather_facts: false
@@ -76,8 +106,13 @@
           - name: GigabitEthernet0/2
             ipv4:
               - address: 192.168.70.1 255.255.255.0
-            shutdown: no  # Add this line to enable the interface
         state: merged
+
+    - name: No Shutdown GigabitEthernet0/2
+      cisco.ios.ios_config:
+        lines:
+          - no shutdown
+        parents: interface GigabitEthernet0/2
 
     - name: GigabitEthernet0/3 Configuration 
       cisco.ios.ios_l3_interfaces:
@@ -85,6 +120,11 @@
           - name: GigabitEthernet0/3
             ipv4:
               - address: 192.168.80.1 255.255.255.0
-            shutdown: no  # Add this line to enable the interface
         state: merged
+
+    - name: No Shutdown GigabitEthernet0/3
+      cisco.ios.ios_config:
+        lines:
+          - no shutdown
+        parents: interface GigabitEthernet0/3
 
