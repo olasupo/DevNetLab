@@ -20,7 +20,7 @@
       ignore_errors: true
 
     - name: Ping 192.168.60.1
-      command: ping -c 4 192.168.60.1
+      command: ping -c 4 192.168.60.150
       register: ping_result_60
       ignore_errors: true
 
